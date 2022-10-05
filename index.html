@@ -7,8 +7,14 @@
   </head>
   <h1>DAO example on XRPL</h1>
   <div id="ledgerInfo">
+    <label for="network">Network</label>
+    <select id="network">
+      <option value="xrplcluster.com" selected="true">Mainnet</option>
+      <option value="s.altnet.rippletest.net/">Testnet</option>
+    </select><br/>
     <label for="ledgerPanel">Validated Ledgers</label>
     <div id="ledgerPanel"></div>
+    <div id="totalSupply"></div>
   </div>
   <script src="./lib/xrpl-dao.js"></script>
 </html>
