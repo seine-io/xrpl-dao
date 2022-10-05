@@ -1,20 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>XRPL-DAO</title>
-    <link rel="stylesheet" href="./css/xrpl-dao.css"/>
-    <script src="https://unpkg.com/xrpl@2.0.0/build/xrpl-latest-min.js"></script>
-  </head>
+
+<head>
+  <title>XRPL-DAO</title>
+  <link rel="stylesheet" href="./css/xrpl-dao.css" />
+  <script src="https://unpkg.com/xrpl@2.0.0/build/xrpl-latest-min.js"></script>
+</head>
+
+<body>
   <h1>DAO example on XRPL</h1>
-  <div id="ledgerInfo">
-    <label for="network">Network</label>
-    <select id="network">
-      <option value="xrplcluster.com" selected="true">Mainnet</option>
-      <option value="s.altnet.rippletest.net/">Testnet</option>
-    </select><br/>
-    <label for="ledgerPanel">Validated Ledgers</label>
-    <div id="ledgerPanel"></div>
-    <div id="totalSupply"></div>
+  <div id="content">
+    <div id="ledgerInfo">
+      <label for="network">Network</label>
+      <select id="network">
+        <option value="xrplcluster.com" selected="true">Mainnet</option>
+        <option value="s.altnet.rippletest.net/">Testnet</option>
+      </select><br />
+      <label for="ledgerPanel">Validated Ledgers</label>
+      <div id="ledgerPanel"></div>
+      <div id="totalSupply"></div>
+    </div>
+    <div id="organizers">
+      <div id="organizer1">
+        <label for="organizer1Seed">Organizer 1 :</label>
+        <input type="text" id="organizer1Seed" placeholder="Enter Seed" size="35" value="sEdVfktSsrkBkPgGMGVpuuszgoj7rRR">
+        <label for="organizer1Address"> address :</label>
+        <span id="organizer1Address"></span>
+        <label for="organizer1Balance"> balance :</label>
+        <span id="organizer1Balance"></span>
+      </div>
+      <div id="organizer2">
+        <label for="organizer2Seed">Organizer 2 :</label>
+        <input type="text" id="organizer2Seed" placeholder="Enter Seed" size="35" value="sEdSTS8aC9u28VsK6aoYtGxm7yqZahR">
+        <label for="organizer2Address"> address :</label>
+        <span id="organizer2Address"></span>
+        <label for="organizer2Balance"> balance :</label>
+        <span id="organizer2Balance"></span>
+      </div>
+      <div id="transfer">
+        <label for="originWallet">From</label>
+        <select id="originWallet">
+          <option value="0" selected="true">Organizer 1</option>
+          <option value="1">Organizer 2</option>
+         </select>
+         <label for="destinationWallet">To</label>
+         <select id="destinationWallet">
+           <option value="0">Organizer 1</option>
+           <option value="1" selected="true">Organizer 2</option>
+          </select>
+          <input type="number" id="transferAmount" placeholder="Enter Amount in drops" size="30"/>
+          <input type="button" id="transferButton" value="Transfer"/>
+      </div>
+    </div>
   </div>
-  <script src="./lib/xrpl-dao.js"></script>
+</body>
+<script src="./lib/xrpl-dao.js"></script>
+
 </html>

@@ -1,3 +1,10 @@
+#content {
+    display: flex;
+    flex-direction: row;
+}
+#organizers{
+    margin-left: 1em;
+}
 #ledgerInfo {
  border: grey solid 1px;
  width:fit-content;
