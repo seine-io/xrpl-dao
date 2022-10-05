@@ -2,9 +2,13 @@
 <html>
   <head>
     <title>XRPL-DAO</title>
+    <link rel="stylesheet" href="./css/xrpl-dao.css"/>
     <script src="https://unpkg.com/xrpl@2.0.0/build/xrpl-latest-min.js"></script>
   </head>
   <h1>DAO example on XRPL</h1>
-  <div id="content"></div>
+  <div id="ledgerInfo">
+    <label for="ledgerPanel">Validated Ledgers</label>
+    <div id="ledgerPanel"></div>
+  </div>
   <script src="./lib/xrpl-dao.js"></script>
 </html>
