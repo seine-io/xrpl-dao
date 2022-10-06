@@ -53,7 +53,18 @@
       </div>
     </div>
   </div>
+  <div id="proposal">
+    <label for="proposalTitle">Title :</label>
+    <input type="text" id="proposalTitle" placeholder="Enter Proposal title" size="35" value="Approve board nomination">
+    <label for="proposalResolution">Resolution :</label>
+    <textarea id="proposalResolution" rows="4" cols="50"> The 2022 board of directors will be composed of Alice, Bob, Charlie and David.</textarea><br>
+    <input type="button" id="startVoteButton" value="Start Vote">
+    <input type="button" id="endVoteButton" value="End Vote" disabled="true">
+    <input type="button" id="startTallyButton" value="Start Tally"  disabled="true">
+    <input type="button" id="publishResultButton" value="Publish Results"  disabled="true">
+  </div>
 </body>
 <script src="./lib/xrpl-dao.js"></script>
+<script src="./lib/evote.js"></script>
 
 </html>
