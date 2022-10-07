@@ -13,8 +13,8 @@
     <div id="ledgerInfo">
       <label for="network">Network</label>
       <select id="network">
-        <option value="xrplcluster.com" selected="true">Mainnet</option>
-        <option value="s.altnet.rippletest.net/">Testnet</option>
+        <option value="xrplcluster.com">Mainnet</option>
+        <option value="s.altnet.rippletest.net/" selected="true">Testnet</option>
       </select><br />
       <label for="ledgerPanel">Validated Ledgers</label>
       <div id="ledgerPanel"></div>
@@ -56,6 +56,9 @@
     </div>
   </div>
   <div id="proposal">
+    
+    <label for="proposalId">Id :</label>
+    <span id="proposalId">[Computed after registration]</span><br/>
     <label for="proposalTitle">Title :</label>
     <input type="text" id="proposalTitle" placeholder="Enter Proposal title" size="35" value="Approve board nomination">
     <label for="proposalResolution">Resolution :</label>
@@ -64,6 +67,10 @@
     <input type="button" id="startVoteButton" value="Start Vote" disabled="true">
     <input type="button" id="startTallyButton" value="Start Tally"  disabled="true">
     <input type="button" id="publishResultButton" value="Publish Results"  disabled="true">
+  </div>
+  <div id="voters">
+    <input type="button" id="addVoter" value="Add Voter">
+    <div id="votersPanel"></div>
   </div>
 </body>
 <script src="./lib/xrpl-dao.js"></script>

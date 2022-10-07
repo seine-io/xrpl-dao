@@ -1,15 +1,26 @@
 #content {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 #organizers{
     margin-left: 1em;
+    width: auto;
 }
 #ledgerInfo {
  border: grey solid 1px;
- width:fit-content;
+ width:14em;
 }
 #ledgerPanel {
     border: grey solid 1px;
     width:fit-content;
+}
+#votersPanel {
+    display: flex;
+    max-width: 100%;
+}
+.voterPanel {
+    margin: 0.5em;
+    border: grey solid 1px;
+    min-width: 200px;
 }
