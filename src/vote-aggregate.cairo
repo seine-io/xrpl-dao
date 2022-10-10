@@ -70,7 +70,7 @@ func get_input_votes() -> (votes: Vote*, n: felt) {
 // The ID of the proposal the user's are voting for.
 // It is replace by the organiser when tallying.
 // It is also part of the voter's signature.
-const PROPOSAL_ID = 9409054710;
+const PROPOSAL_ID = 10018;
 
 func verify_vote_signature{
     pedersen_ptr: HashBuiltin*, ecdsa_ptr: SignatureBuiltin*
