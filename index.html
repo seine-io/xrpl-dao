@@ -3,43 +3,66 @@
 
 <head>
   <title>XRPL-DAO</title>
-  <link rel="stylesheet" href="./css/xrpl-dao.css" />
+  <link rel="stylesheet" href="./css/flatdesign.css" />
   <script src="https://unpkg.com/xrpl@2.0.0/build/xrpl-latest-min.js"></script>
 </head>
 
 <body>
-  <h1>DAO example on XRPL</h1>
-  <div id="content">
-    <div id="ledgerInfo">
-      <label for="network">Network</label>
-      <select id="network">
-        <option value="xrplcluster.com">Mainnet</option>
-        <option value="s.altnet.rippletest.net/" selected="true">Testnet</option>
-      </select><br />
-      <label for="ledgerPanel">Validated Ledgers</label>
-      <div id="ledgerPanel"></div>
-      <div id="totalSupply"></div>
-    </div>
+  <div id="content" class="main-container">
+  <header class="block">
+    <ul class="header-menu horizontal-list">
+        <li>
+            <a class="header-menu-tab" onclick="openTab('proposalTab')"><span class="icon fontawesome-file "></span>Proposals</a>
+        </li>
+        <li>
+            <a class="header-menu-tab" onclick="openTab('organisersTab')"><span class="icon fontawesome-user "></span>Organisers</a>
+        </li>
+        <li>
+            <a class="header-menu-tab" onclick="openTab('votersTab')"><span class="icon fontawesome-envelope "></span>Voters</a>
+        </li>
+        <li>
+            <a class="header-menu-tab" onclick="openTab('settingsTab')"><span class="icon entypo-cog "></span>Settings</a>
+        </li>
+    </ul>
+</header>
+ 
+  <div id="ledgerInfo" style="display:none" class="tab settingsTab">
+    <label for="network">Network</label>
+    <select id="network">
+      <option value="xrplcluster.com">Mainnet</option>
+      <option value="s.altnet.rippletest.net/" selected="true">Testnet</option>
+    </select><br />
+    <label for="ledgerPanel">Validated Ledgers</label>
+    <div id="ledgerPanel"></div>
+    <div id="totalSupply"></div>
+  </div>
+
+  <div id="content" style="display:none" class="tab organisersTab">
     <div id="organizers">
-      <div id="organizer1">
-        <label for="organizer1Seed">Organizer 1 :</label>
-        <input type="text" id="organizer1Seed" placeholder="Enter Seed" size="35" value="sEdVfktSsrkBkPgGMGVpuuszgoj7rRR">
-        <label for="organizer1Address"> address :</label>
-        <span id="organizer1Address"></span>
-        <label for="organizer1Balance"> balance :</label>
+      <table>
+        <tr>
+      <td><div id="organizer1" class="blockpad">
+        <h2 class="titular">ORGANISER 1</h2>
+        <label for="organizer1Seed">Seed</label>
+        <input type="text" id="organizer1Seed" placeholder="Enter Seed" size="35" value="sEdVfktSsrkBkPgGMGVpuuszgoj7rRR" ><br>
+        <label for="organizer1Address">Address</label>
+        <span id="organizer1Address"></span><br><br>
+        <label for="organizer1Balance">Balance</label>
         <span id="organizer1Balance"></span><br>
         <div id="organizer1Voters"></div>
-      </div>
-      <div id="organizer2">
-        <label for="organizer2Seed">Organizer 2 :</label>
-        <input type="text" id="organizer2Seed" placeholder="Enter Seed" size="35" value="sEdSTS8aC9u28VsK6aoYtGxm7yqZahR">
-        <label for="organizer2Address"> address :</label>
-        <input type="text" id="organizer2Address" placeholder="Enter Seed" size="35" value="rf6vfDDVZ69U7WWDtnyPfKmVMuD6fkwb5T">
-        <span id=""></span>
-        <label for="organizer2Balance"> balance :</label>
+      </div></td>
+      <td><div id="organizer2" class="blockpad">
+        <h2 class="titular">ORGANISER 2</h2>
+        <label for="organizer2Seed">Seed</label>
+        <input type="text" id="organizer2Seed" placeholder="Enter Seed" size="35" value="sEdSTS8aC9u28VsK6aoYtGxm7yqZahR"><br>
+        <label for="organizer2Address">Address</label>
+        <span id="organizer2Address"></span><br><br>
+        <label for="organizer2Balance">Balance</label>
         <span id="organizer2Balance"></span><br>
         <div id="organizer2Voters"></div>
-      </div>
+      </div></td>
+    </tr>
+    </table>
       <div id="transfer">
         <label for="originWallet">From</label>
         <select id="originWallet">
@@ -53,27 +76,31 @@
           </select>
           <input type="number" id="transferAmount" placeholder="Enter Amount in drops" size="30"/>
           <input type="button" id="transferButton" value="Transfer"/>
-      </div>
-      <div id="transactionPanel"></div>
+      </div><br>
     </div>
   </div>
-  <div id="proposal">
+  <div id="proposal"  class="tab proposalTab">
     
     <label for="proposalId">Id :</label>
     <span id="proposalId">[Computed after registration]</span><br/>
     <label for="proposalTitle">Title :</label>
-    <input type="text" id="proposalTitle" placeholder="Enter Proposal title" size="35" value="Approve board nomination">
+    <input type="text" id="proposalTitle" placeholder="Enter Proposal title" size="35" value="Approve board nomination"><br>
+    <span class="verticalUp">
     <label for="proposalResolution">Resolution :</label>
     <textarea id="proposalResolution" rows="4" cols="50"> The 2022 board of directors will be composed of Alice, Bob, Charlie and David.</textarea><br>
+    </span>
     <input type="button" id="startRegistrationButton" value="Start Registration">
     <input type="button" id="startVoteButton" value="Start Vote" disabled="true">
     <input type="button" id="startTallyButton" value="Start Tally"  disabled="true">
     <input type="button" id="publishResultButton" value="Publish Results"  disabled="true">
+    <div id="transactionPanel" class="blockpad"></div>
   </div>
-  <div id="voters">
+  <div id="voters" style="display:none" class="tab votersTab" >
     <input type="button" id="addVoter" value="Add Voter" disabled="true">
     <div id="votersPanel"></div>
   </div>
+  </div><!-- main container -->
+
 </body>
 <script src="./lib/xrpl-dao.js"></script>
 <script src="./lib/evote.js"></script>
