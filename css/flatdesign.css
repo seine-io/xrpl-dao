@@ -7,6 +7,12 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
 @import url(https://weloveiconfonts.com/api/?family=entypo|fontawesome|zocial);
 
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+
 input[type=button]{
     border: none;
     color: white;
@@ -34,6 +40,9 @@ input[type=button]:enabled:hover {
     background: #35aadc;
 }	
 
+#proposalTitle{
+    margin-left: 100px;
+}
 
 /* entypo */
 [class*="entypo-"]:before {
@@ -361,6 +370,7 @@ h1, h2, p, a, span{
 			background: #394264;
 			border-radius: 5px;
             padding:10px;
+            overflow-x:scroll;
 		}
 
 		/******************************************** LEFT CONTAINER *****************************************/

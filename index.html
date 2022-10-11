@@ -9,96 +9,141 @@
 
 <body>
   <div id="content" class="main-container">
-  <header class="block">
-    <ul class="header-menu horizontal-list">
+    <header class="block">
+      <ul class="header-menu horizontal-list">
         <li>
-            <a class="header-menu-tab" onclick="openTab('proposalTab')"><span class="icon fontawesome-file "></span>Proposals</a>
+          <a class="header-menu-tab" onclick="openTab('proposalTab')"><span
+              class="icon fontawesome-file "></span>Proposals</a>
         </li>
         <li>
-            <a class="header-menu-tab" onclick="openTab('organisersTab')"><span class="icon fontawesome-user "></span>Organisers</a>
+          <a class="header-menu-tab" onclick="openTab('organisersTab')"><span
+              class="icon fontawesome-user "></span>Organisers</a>
         </li>
         <li>
-            <a class="header-menu-tab" onclick="openTab('votersTab')"><span class="icon fontawesome-envelope "></span>Voters</a>
+          <a class="header-menu-tab" onclick="openTab('votersTab')"><span
+              class="icon fontawesome-envelope "></span>Voters</a>
         </li>
         <li>
-            <a class="header-menu-tab" onclick="openTab('settingsTab')"><span class="icon entypo-cog "></span>Settings</a>
+          <a class="header-menu-tab" onclick="openTab('settingsTab')"><span class="icon entypo-cog "></span>Settings</a>
         </li>
-    </ul>
-</header>
- 
-  <div id="ledgerInfo" style="display:none" class="tab settingsTab">
-    <label for="network">Network</label>
-    <select id="network">
-      <option value="xrplcluster.com">Mainnet</option>
-      <option value="s.altnet.rippletest.net/" selected="true">Testnet</option>
-    </select><br />
-    <label for="ledgerPanel">Validated Ledgers</label>
-    <div id="ledgerPanel"></div>
-    <div id="totalSupply"></div>
-  </div>
+        <li>
+          <span id="proposalTitle"></span>
+        </li>
+      </ul>
+    </header>
 
-  <div id="content" style="display:none" class="tab organisersTab">
-    <div id="organizers">
-      <table>
-        <tr>
-      <td><div id="organizer1" class="blockpad">
-        <h2 class="titular">ORGANISER 1</h2>
-        <label for="organizer1Seed">Seed</label>
-        <input type="text" id="organizer1Seed" placeholder="Enter Seed" size="35" value="sEdVfktSsrkBkPgGMGVpuuszgoj7rRR" ><br>
-        <label for="organizer1Address">Address</label>
-        <span id="organizer1Address"></span><br><br>
-        <label for="organizer1Balance">Balance</label>
-        <span id="organizer1Balance"></span><br>
-        <div id="organizer1Voters"></div>
-      </div></td>
-      <td><div id="organizer2" class="blockpad">
-        <h2 class="titular">ORGANISER 2</h2>
-        <label for="organizer2Seed">Seed</label>
-        <input type="text" id="organizer2Seed" placeholder="Enter Seed" size="35" value="sEdSTS8aC9u28VsK6aoYtGxm7yqZahR"><br>
-        <label for="organizer2Address">Address</label>
-        <span id="organizer2Address"></span><br><br>
-        <label for="organizer2Balance">Balance</label>
-        <span id="organizer2Balance"></span><br>
-        <div id="organizer2Voters"></div>
-      </div></td>
-    </tr>
-    </table>
-      <div id="transfer">
-        <label for="originWallet">From</label>
-        <select id="originWallet">
-          <option value="0" selected="true">Organizer 1</option>
-          <option value="1">Organizer 2</option>
-         </select>
-         <label for="destinationWallet">To</label>
-         <select id="destinationWallet">
-           <option value="0">Organizer 1</option>
-           <option value="1" selected="true">Organizer 2</option>
-          </select>
-          <input type="number" id="transferAmount" placeholder="Enter Amount in drops" size="30"/>
-          <input type="button" id="transferButton" value="Transfer"/>
-      </div><br>
+    <div id="ledgerInfo" style="display:none" class="tab settingsTab">
+      <label for="network">Network</label>
+      <select id="network">
+        <option value="xrplcluster.com">Mainnet</option>
+        <option value="s.altnet.rippletest.net/" selected="true">Testnet</option>
+      </select><br />
+      <label for="ledgerPanel">Validated Ledgers</label>
+      <div id="ledgerPanel"></div>
+      <div id="totalSupply"></div>
     </div>
-  </div>
-  <div id="proposal"  class="tab proposalTab">
-    
-    <label for="proposalId">Id :</label>
-    <span id="proposalId">[Computed after registration]</span><br/>
-    <label for="proposalTitle">Title :</label>
-    <input type="text" id="proposalTitle" placeholder="Enter Proposal title" size="35" value="Approve board nomination"><br>
-    <span class="verticalUp">
-    <label for="proposalResolution">Resolution :</label>
-    <textarea id="proposalResolution" rows="4" cols="50"> The 2022 board of directors will be composed of Alice, Bob, Charlie and David.</textarea><br>
-    </span>
-    <input type="button" id="startRegistrationButton" value="Start Registration">
-    <input type="button" id="startVoteButton" value="Start Vote" disabled="true">
-    <input type="button" id="startTallyButton" value="Start Tally"  disabled="true">
-    <input type="button" id="publishResultButton" value="Publish Results"  disabled="true">
-    <div id="transactionPanel" class="blockpad"></div>
-  </div>
-  <div id="voters" style="display:none" class="tab votersTab" >
-    <input type="button" id="addVoter" value="Add Voter" disabled="true">
-    <div id="votersPanel"></div>
-  </div>
+
+    <div id="content" style="display:none" class="tab organisersTab">
+      <div id="organizers">
+        <table>
+          <tr>
+            <td>
+              <div id="organizer1" class="blockpad">
+                <h2 class="titular">ORGANISER 1</h2>
+                <label for="organizer1Seed">Seed</label>
+                <input type="text" id="organizer1Seed" placeholder="Enter Seed" size="35"
+                  value="sEdVfktSsrkBkPgGMGVpuuszgoj7rRR"><br>
+                <label for="organizer1Address">Address</label>
+                <span id="organizer1Address"></span><br><br>
+                <label for="organizer1Balance">Balance</label>
+                <span id="organizer1Balance"></span><br>
+                <div id="organizer1Voters"></div>
+              </div>
+            </td>
+            <td>
+              <div id="organizer2" class="blockpad">
+                <h2 class="titular">ORGANISER 2</h2>
+                <label for="organizer2Seed">Seed</label>
+                <input type="text" id="organizer2Seed" placeholder="Enter Seed" size="35"
+                  value="sEdSTS8aC9u28VsK6aoYtGxm7yqZahR"><br>
+                <label for="organizer2Address">Address</label>
+                <span id="organizer2Address"></span><br><br>
+                <label for="organizer2Balance">Balance</label>
+                <span id="organizer2Balance"></span><br>
+                <div id="organizer2Voters"></div>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <div id="transfer" style="display: none;">
+          <label for="originWallet">From</label>
+          <select id="originWallet">
+            <option value="0" selected="true">Organizer 1</option>
+            <option value="1">Organizer 2</option>
+          </select>
+          <label for="destinationWallet">To</label>
+          <select id="destinationWallet">
+            <option value="0">Organizer 1</option>
+            <option value="1" selected="true">Organizer 2</option>
+          </select>
+          <input type="number" id="transferAmount" placeholder="Enter Amount in drops" size="30" />
+          <input type="button" id="transferButton" value="Transfer" />
+        </div><br>
+      </div>
+    </div>
+    <div id="proposal" class="tab proposalTab">
+      <div class="left-container container" style="margin-right: 20px;">
+        <div class="menu-box block">
+          <!-- MENU BOX (LEFT-CONTAINER) -->
+          <h2 class="titular">PROPOSALS</h2>
+          <ul class="menu-box-menu">
+            <li>
+              <a class="menu-box-tab" href="#6"><span class="icon fontawesome-file scnd-font-color"></span>Proposal 4
+                <div class="menu-box-number" id="proposalStatus2"></div></a>
+            </li>
+            <li>
+              <a class="menu-box-tab" href="#8"><span class="icon fontawesome-file scnd-font-color"></span>Proposal 3<div
+                  class="menu-box-number">v</div></a>
+            </li>
+            <li>
+              <a class="menu-box-tab" href="#10"><span class="icon fontawesome-file scnd-font-color"></span>Proposal 2<div
+                  class="menu-box-number">x</div></a>
+            </li>
+            <li>
+              <a class="menu-box-tab" href="#12"><span class="icon fontawesome-file scnd-font-color"></span>Proposal 1<div
+                class="menu-box-number">v</div></a>
+            </li>
+          </ul>
+          <a class="add-button" href="#28"></a>
+        </div>
+      </div>
+      <div class="blockpad clearfix">
+        <h2 class="titular">PROPOSAL 4</h2>
+        <label for="proposalId">Id :</label>
+        <span id="proposalId">[Computed after registration]</span><br/><br/>
+        <label for="proposalId">Status :</label>
+        <span id="proposalStatus"></span><br/><br/>
+        <label for="proposalTitle">Title :</label>
+        <input type="text" id="proposalTitle" placeholder="Enter Proposal title" size="35"
+          value="Approve board nomination"><br>
+        <span class="verticalUp">
+          <label for="proposalResolution">Resolution :</label>
+          <textarea id="proposalResolution" rows="4"
+            cols="50"> The 2022 board of directors will be composed of Alice, Bob, Charlie and David.</textarea><br>
+        </span>
+        <input type="button" id="startRegistrationButton" value="Start Registration">
+        <input type="button" id="startVoteButton" value="Start Vote" disabled="true">
+        <input type="button" id="startTallyButton" value="Start Tally" disabled="true">
+        <input type="button" id="publishResultButton" value="Publish Results" disabled="true">
+      </div>
+
+      <div id="transactionPanel" class="blockpad"></div>
+    </div>
+    <div id="voters" style="display:none" class="tab votersTab">
+      <input type="button" id="addVoter" value="Add Voter" disabled="true">
+      <div id="votersPanel"></div>
+    </div>
   </div><!-- main container -->
 
 </body>
