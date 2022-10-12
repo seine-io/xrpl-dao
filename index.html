@@ -26,9 +26,10 @@
         <li>
           <a class="header-menu-tab" onclick="openTab('settingsTab')"><span class="icon entypo-cog "></span>Settings</a>
         </li>
-        <li>
-          <span id="proposalTitle"></span>
+        <li style="width:600px">
+          <span id="proposalTitle" ></span>
         </li>
+        <img src="./img/logos_seineio-04.png"  height="80" style="right:0px">
       </ul>
     </header>
 
@@ -96,41 +97,41 @@
       <div class="left-container container" style="margin-right: 20px;">
         <div class="menu-box block">
           <!-- MENU BOX (LEFT-CONTAINER) -->
-          <h2 class="titular">PROPOSALS</h2>
+          <h2 class="titular">PROPOSALS & RESULTS</h2>
           <ul class="menu-box-menu">
             <li>
-              <a class="menu-box-tab" href="#6"><span class="icon fontawesome-file scnd-font-color"></span>Proposal 4
+              <a class="menu-box-tab" href="#6"><span class="icon fontawesome-file scnd-font-color"></span>P#4: Acquire new boat
                 <div class="menu-box-number" id="proposalStatus2"></div></a>
             </li>
             <li>
-              <a class="menu-box-tab" href="#8"><span class="icon fontawesome-file scnd-font-color"></span>Proposal 3<div
-                  class="menu-box-number">v</div></a>
+              <a class="menu-box-tab" href="#8"><span class="icon fontawesome-file scnd-font-color"></span>P#3: New member<div
+                  class="menu-box-number" style="background-color: green;">go</div></a>
             </li>
             <li>
-              <a class="menu-box-tab" href="#10"><span class="icon fontawesome-file scnd-font-color"></span>Proposal 2<div
-                  class="menu-box-number">x</div></a>
+              <a class="menu-box-tab" href="#10"><span class="icon fontawesome-file scnd-font-color"></span>P#2: Next exploration<div
+                  class="menu-box-number" style="background-color: red;">no</div></a>
             </li>
             <li>
-              <a class="menu-box-tab" href="#12"><span class="icon fontawesome-file scnd-font-color"></span>Proposal 1<div
-                class="menu-box-number">v</div></a>
+              <a class="menu-box-tab" href="#12"><span class="icon fontawesome-file scnd-font-color"></span>P#1: Rules of Engagement<div
+                class="menu-box-number" style="background-color: green;">go</div></a>
             </li>
           </ul>
           <a class="add-button" href="#28"></a>
         </div>
       </div>
       <div class="blockpad clearfix">
-        <h2 class="titular">PROPOSAL 4</h2>
+        <h2 class="titular">P#4: Acquire new boat</h2>
         <label for="proposalId">Id :</label>
         <span id="proposalId">[Computed after registration]</span><br/><br/>
         <label for="proposalId">Status :</label>
         <span id="proposalStatus"></span><br/><br/>
         <label for="proposalTitle">Title :</label>
         <input type="text" id="proposalTitle" placeholder="Enter Proposal title" size="35"
-          value="Approve board nomination"><br>
+          value="Acquire new boat"><br>
         <span class="verticalUp">
           <label for="proposalResolution">Resolution :</label>
           <textarea id="proposalResolution" rows="4"
-            cols="50"> The 2022 board of directors will be composed of Alice, Bob, Charlie and David.</textarea><br>
+            cols="50">The organisation will acquire a new electric and solar boat for the price of $$$.</textarea><br>
         </span>
         <input type="button" id="startRegistrationButton" value="Start Registration">
         <input type="button" id="startVoteButton" value="Start Vote" disabled="true">
